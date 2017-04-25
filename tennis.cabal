@@ -16,7 +16,10 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base         >= 4.7 && < 5
+                     , either       >= 4.4.1.1
+                     , monad-loops
+                     , transformers >= 0.5.2.0
   default-language:    Haskell2010
 
 executable tennis-exe
@@ -24,7 +27,10 @@ executable tennis-exe
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
+                     , either       >= 4.4.1.1
+                     , monad-loops
                      , tennis
+                     , transformers >= 0.5.2.0
   default-language:    Haskell2010
 
 test-suite tennis-test
@@ -32,7 +38,10 @@ test-suite tennis-test
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
+                     , either       >= 4.4.1.1
+                     , monad-loops
                      , tennis
+                     , transformers >= 0.5.2.0
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
