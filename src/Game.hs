@@ -20,10 +20,13 @@ execute :: Game -> IO Game
 execute game = do
   if over game
     then return game
-    else do putStrLn $ "WE ARE DOING THE THINGS"
+    else do putStrLn $ "The game is afoot..."
             action <- getAction
             putStr $ "action: " ++ show action
-            return game -- TODO: finish me
+            -- TODO: finish me
+            if action == Quit
+              then return game
+              else execute game
 
 over :: Game -> Bool
 over game = False
